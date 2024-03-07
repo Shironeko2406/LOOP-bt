@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+    <title>Tính Tổng S(n)</title>
+</head>
+
+<body>
+    <h1>Tính Tổng S(n)</h1>
+    <label for="numberX">Nhập số x:</label>
+    <input type="number" id="numberX" placeholder="Nhập số x" required>
+    <br>
+    <label for="numberN">Nhập số n:</label>
+    <input type="number" id="numberN" placeholder="Nhập số n" required>
+    <br>
+    <button onclick="tinhTong()">Tính Tổng S(n)</button>
+    <div id="result"></div>
+
+    <script>
+        function tinhTong() {
+            var x = parseFloat(document.getElementById('numberX').value);
+            var n = parseInt(document.getElementById('numberN').value);
+            var tong = 0;
+
+            for (var i = 1; i <= n; i++) {
+                tong += Math.pow(x, i);
+            }
+
+            document.getElementById('result').innerHTML = 'Tổng S(n) là: ' + tong;
+        }
+    </script>
+</body>
+
+</html>
